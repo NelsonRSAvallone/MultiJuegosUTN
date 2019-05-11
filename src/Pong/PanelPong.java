@@ -7,6 +7,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 /**
@@ -37,5 +39,15 @@ Pelota pelota = new Pelota(0,0);
     public void actualizar(){
     pelota.mover(getBounds());
     }
-    
+    public void iterarJuego(){
+    //necesitamos un bucle para que el juego se actualice
+    while ( true ){
+    repaint ();
+        try {
+            Thread.sleep(6);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(PanelPong.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    }
 }

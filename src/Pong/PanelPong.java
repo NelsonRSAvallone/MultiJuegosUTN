@@ -49,5 +49,6 @@ Pelota pelota = new Pelota(0,0);
             Logger.getLogger(PanelPong.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
     }
 }

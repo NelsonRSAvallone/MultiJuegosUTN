@@ -24,8 +24,8 @@ public class VentanaPong extends JFrame {
         add(lamina);
         setVisible(true);//Para que la ventana se vea
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Para que se cierre la aplicacion cuando cierro la ventana
-       // hilo=new Hilo(lamina);
-        //hilo.start();
-        lamina.iterarJuego();//Nuestra lamina se va a estar repintando cada 6 milisegundos
+        hilo=new Hilo(lamina);
+        hilo.start();
+      //  lamina.iterarJuego();//Nuestra lamina se va a estar repintando cada 6 milisegundos
     }
 }

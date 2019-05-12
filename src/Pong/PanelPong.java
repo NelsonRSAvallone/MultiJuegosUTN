@@ -38,22 +38,13 @@ public PanelPong() {
     
     public void dibujar(Graphics2D g){
     g.fill(pelota.getPelota());//este metodo nos retorna un rectangulo tipo 2d
-    
+    g.fill(r1.getRaqueta());
+    g.fill(r2.getRaqueta());
     }
     
     public void actualizar(){
     pelota.mover(getBounds());
     }
-    public void iterarJuego(){
-    //necesitamos un bucle para que el juego se actualice
-    while ( true ){
-    repaint ();
-        try {
-            Thread.sleep(6);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(PanelPong.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
     
-    }
+    
 }

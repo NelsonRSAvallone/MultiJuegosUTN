@@ -5,20 +5,30 @@
  */
 package Pong;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author NelsonSosa
  */
 public class Hilo extends Thread {
-    PanelPong lamina;
+    private final PanelPong lamina;
+    
     public Hilo(PanelPong lamina){
     this.lamina=lamina;
     }
     
     @Override
-    public void run(){
-    while(true){//Mientras sea verdadero, nuestr lamina se vuelve a dibujar
-    lamina.repaint();//Se vuelve a dibujar
+    public void run() {
+        while (true) {
+            try {
+                Thread.sleep(6);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Hilo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            lamina.repaint();
+          
+        }
     }
-   }
 }

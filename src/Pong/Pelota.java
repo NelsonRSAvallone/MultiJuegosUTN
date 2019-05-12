@@ -24,9 +24,9 @@ public class Pelota {
        this.y=y;
     }
    public Rectangle2D getPelota(){
-   
    return new Rectangle2D.Double(x,y,ANCHO,ALTO);
    }
+   
    //metodo para mover la pelota y que rebote
    public void mover(Rectangle limites){
     x=x+dx;

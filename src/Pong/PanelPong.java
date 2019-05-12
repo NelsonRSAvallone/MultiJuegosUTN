@@ -31,6 +31,7 @@ public PanelPong() {
     super.paintComponent(g);
     Graphics2D g2 = (Graphics2D) g;
     g2.setColor(Color.WHITE);//Elegimos el color de la pelota
+    
     dibujar(g2);
     actualizar ();
     }

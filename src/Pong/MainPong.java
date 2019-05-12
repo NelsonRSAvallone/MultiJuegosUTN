@@ -1,7 +1,7 @@
 /*
 Este es el Main, donde vamos a mandar a llamar a todas las Clases
  */
-package Pong.principal;
+package Pong;
 
 
 import Pong.VentanaPong;

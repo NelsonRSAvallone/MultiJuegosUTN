@@ -17,7 +17,11 @@ import javax.swing.JPanel;
  */
 public class PanelPong extends JPanel {
 Pelota pelota = new Pelota(0,0);
-    public PanelPong() {
+Raqueta r1 = new Raqueta (10,200); //Raqueta izquierda
+Raqueta r2 = new Raqueta (794-10-Raqueta.ANCHO,200);  //Raqueta derecha pero hay que poner la posicion correspondiente a la anchura maxima - la distancia que pretendemos  
+
+
+public PanelPong() {
         setBackground(Color.BLACK);
         
     }

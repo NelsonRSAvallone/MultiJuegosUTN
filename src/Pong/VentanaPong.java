@@ -22,7 +22,8 @@ public class VentanaPong extends JFrame {
         setResizable(false);//impide que el usuario modifique el tamaño de la ventana
         lamina = new PanelPong();
         add(lamina);
-        hilo=new Hilo(lamina);
-        hilo.start();
+       // hilo=new Hilo(lamina);
+        //hilo.start();
+        lamina.iterarJuego();//Nuestra lamina se va a estar repintando cada 6 milisegundos
     }
 }

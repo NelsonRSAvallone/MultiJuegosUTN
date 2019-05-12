@@ -17,8 +17,8 @@ public class Pelota {
    private int y;
    private  int dx=1;
    private  int dy=1;
-   
    private final int ANCHO=15, ALTO=15;
+   
    public Pelota (int x, int y){
        this.x=x;
        this.y=y;
@@ -29,8 +29,8 @@ public class Pelota {
    
    //metodo para mover la pelota y que rebote
    public void mover(Rectangle limites){
-    x=x+dx;
-    y=y+dy;
+    x += dx;
+    y += dy;
     if(x>limites.getMaxX()){
     dx=-dx;
     }//fin if dx

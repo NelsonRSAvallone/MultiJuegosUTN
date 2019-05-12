@@ -1,8 +1,10 @@
 /*
 Este es el Main, donde vamos a mandar a llamar a todas las Clases
  */
-package Pong;
+package Pong.principal;
 
+
+import Pong.VentanaPong;
 import javax.swing.JFrame;
 
 /**

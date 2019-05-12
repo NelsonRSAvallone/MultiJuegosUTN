@@ -6,7 +6,6 @@ package Pong;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.geom.Rectangle2D;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
@@ -40,6 +39,7 @@ public PanelPong() {
     g.fill(pelota.getPelota());//este metodo nos retorna un rectangulo tipo 2d
     g.fill(r1.getRaqueta());
     g.fill(r2.getRaqueta());
+    
     }
     
     public void actualizar(){

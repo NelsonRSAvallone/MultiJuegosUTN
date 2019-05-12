@@ -18,7 +18,7 @@ public class Raqueta {
         this.y=y;
     } 
     
-    public Rectangle2D getRaqueta() {
+     public Rectangle2D getRaqueta() {
         return new Rectangle2D.Double(x, y, ANCHO, ALTO);
     }
 }

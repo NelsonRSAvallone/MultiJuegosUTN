@@ -10,7 +10,7 @@ import java.awt.geom.Rectangle2D;
  */
 public class Raqueta {
     private int x,y;
-    private final int ANCHO=10, ALTO=25;
+    static final int ANCHO=10, ALTO=40; //Static para que podamos invocarlas desde otras clases
     
     
     public Raqueta (int x, int y){

@@ -47,6 +47,15 @@ public PanelPong() {
     r1.moverR1(getBounds());
     r2.moverR2(getBounds());
     }
-    
+    public void iterarJuego() {
+        while (true) {
+            try {
+                repaint();
+                Thread.sleep(6);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(PanelPong.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
     
 }

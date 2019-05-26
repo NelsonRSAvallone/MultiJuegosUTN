@@ -30,7 +30,7 @@ public class Raqueta {
       y++;
       }
      }
-     void moverR2(){ // metodo para la raqueta 2
+     void moverR2(Rectangle limites){ // metodo para la raqueta 2
       if (EventoTeclado.up){//Si la up es true, entonces el valor en y de la raqueta debe diminuir
       y--;
       }

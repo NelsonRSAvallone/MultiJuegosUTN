@@ -44,6 +44,8 @@ public PanelPong() {
     
     public void actualizar(){
     pelota.mover(getBounds());
+    r1.moverR1(getBounds());
+    r2.moverR2(getBounds());
     }
     
     

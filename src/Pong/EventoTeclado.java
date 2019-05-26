@@ -13,10 +13,10 @@ static boolean w, s, up, down;
     
 @Override
     public void keyPressed (KeyEvent e){//Para que se active el evento cuando precionamos la tecla
-    
+    //todo este metodo contiene informacion de que tecla estamos presionando
         int id = e.getKeyCode();
         
-        if (id == KeyEvent.VK_W){
+        if (id == KeyEvent.VK_W){ //VK_W corresponde a la letra w del teclado, cada letra en el teclado tiene un VK, la api de java nos lo muestra
         w = true;
         }
         if(id == KeyEvent.VK_S){

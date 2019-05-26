@@ -22,6 +22,8 @@ public class VentanaPong extends JFrame {
         setResizable(false);//impide que el usuario modifique el tamaño de la ventana
         lamina = new PanelPong();
         add(lamina);
+        //instanciamos para que funcione las teclas
+        addKeyListener(new EventoTeclado());
         setVisible(true);//Para que la ventana se vea
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Para que se cierre la aplicacion cuando cierro la ventana
         

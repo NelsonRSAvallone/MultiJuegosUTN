@@ -26,7 +26,7 @@ public class Raqueta {
      if (EventoTeclado.w && y>limites.getMinY()){//Si la w es true, entonces el valor en y de la raqueta debe diminuir
       y--;
       }
-      if (EventoTeclado.s && y < limites.getMaxY()){//Si la s es true, entonces el valor en y de la raqueta debe aumentar
+      if (EventoTeclado.s && y < limites.getMaxY()- ALTO){//Si la s es true, entonces el valor en y de la raqueta debe aumentar
       y++;
       }
      }
@@ -34,7 +34,7 @@ public class Raqueta {
       if (EventoTeclado.up&& y>limites.getMinY()){//Si la up es true, entonces el valor en y de la raqueta debe diminuir
       y--;
       }
-      if (EventoTeclado.down && y < limites.getMaxY()){//Si la down es true, entonces el valor en y de la raqueta debe aumentar
+      if (EventoTeclado.down && y < limites.getMaxY()-ALTO){//Si la down es true, entonces el valor en y de la raqueta debe aumentar
       y++;
       }
      }

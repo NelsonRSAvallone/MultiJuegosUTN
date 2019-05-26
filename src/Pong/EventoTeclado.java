@@ -12,7 +12,7 @@ public class EventoTeclado extends KeyAdapter {
 static boolean w, s, up, down;
     
 @Override
-    public void keyPressed (KeyEvent e){
+    public void keyPressed (KeyEvent e){//Para que se active el evento cuando precionamos la tecla
     
         int id = e.getKeyCode();
         
@@ -30,7 +30,7 @@ static boolean w, s, up, down;
         }
     } 
     @Override
-    public void keyReleased(KeyEvent e) {
+    public void keyReleased(KeyEvent e) {//Para que ocurra otro evento cuando soltamos la tecla
 
         int id = e.getKeyCode();
         

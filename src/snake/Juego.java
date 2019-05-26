@@ -33,20 +33,23 @@ public class Juego {
     int x;
     int y;
     int desplazamiento = 20;
+    
     Timer tiempo;
     int bandera = 0;
     Rectangle serp;
+    
+     int perdio = 0;
     //comida
     JLabel comida;
     int cx = 0;//posicion de comida en x
     int cy = 0;//posicion de comida en y
     Rectangle comi;
-    
+
     //Puntuacion
     JLabel puntuacion;
     int contador = 0;
 
-    public Juego() {
+    public Juego() {//constructor
         //ventana
         ventana = new JFrame("Snake");
         ventana.setSize(600, 600);
@@ -105,7 +108,22 @@ public class Juego {
             public void actionPerformed(ActionEvent ae) {
                 comi.setBounds(comida.getBounds());
                 serp.setBounds(serpiente.get(0).getBounds());
+                if (serpiente.get(0).getX() > 560) {
 
+                }
+                if (serpiente.get(0).getX() < 30) {
+                    // perdio=1;
+                }
+                if (serpiente.get(0).getY() > 510) {
+                    // perdio=1;
+                }
+                if (serpiente.get(0).getY() < 30) {
+                    //perdio=1;
+                }
+                if (perdio == 1) {
+
+                    tiempo.stop();
+                }
                 if (comi.intersects(serp)) {
                     cx = aleatorio.nextInt(580);
                     cy = aleatorio.nextInt(580);

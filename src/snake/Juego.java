@@ -41,6 +41,7 @@ public class Juego {
     int cx = 0;//posicion de comida en x
     int cy = 0;//posicion de comida en y
     Rectangle comi;
+    
     //Puntuacion
     JLabel puntuacion;
     int contador = 0;

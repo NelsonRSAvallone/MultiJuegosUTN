@@ -16,6 +16,7 @@ import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -33,12 +34,12 @@ public class Juego {
     int x;
     int y;
     int desplazamiento = 20;
-    
+
     Timer tiempo;
     int bandera = 0;
     Rectangle serp;
-    
-     int perdio = 0;
+
+    int perdio = 0;
     //comida
     JLabel comida;
     int cx = 0;//posicion de comida en x
@@ -209,6 +210,16 @@ public class Juego {
                     if (bandera == 0) {
                         tiempo.start();
                         bandera = 1;
+                    }
+                }
+                if (e.getKeyCode() == KeyEvent.VK_P) {
+                    tiempo.stop();
+                    
+                    JOptionPane.showMessageDialog(null, "PAUSA");
+                    
+                    if (bandera == 1) {
+                        tiempo.start();
+
                     }
                 }
             }

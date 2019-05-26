@@ -49,7 +49,7 @@ public class Juego {
     JLabel puntuacion;
     int contador = 0;
 
-    public Juego() {
+    public Juego() {//constructor
         //ventana
         ventana = new JFrame("Snake");
         ventana.setSize(600, 600);

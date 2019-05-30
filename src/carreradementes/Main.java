@@ -17,8 +17,11 @@ public class Main {
     public static void main(String[] args) {
         GameLoop control = new GameLoop();
         
+        Graficos grafico = new Graficos();
+        grafico.moverCerebro();
+    
         Ventana v = new Ventana();
-        Player player1 = new Player();
+        //Player player1 = new Player();
         
         
        // SetGame.mensajeBienvenida();

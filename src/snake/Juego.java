@@ -106,9 +106,17 @@ public class Juego {
 
         tiempo = new Timer(200, new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent ae) {
+            public void actionPerformed(ActionEvent ae) {//establece los ciclos de repeticion
                 comi.setBounds(comida.getBounds());
                 serp.setBounds(serpiente.get(0).getBounds());
+                //colision con la misma serpiente 
+                for (int i = 1; i < serpiente.size(); i++) {
+                    if ((serpiente.get(0).getX() == serpiente.get(i).getX()) && (serpiente.get(0).getY() == serpiente.get(i).getY()) && (serpiente.size() > 2)) {
+                        perdio = 1;
+                        tiempo.stop();
+                        JOptionPane.showMessageDialog(null, "game over" + "\n Score: " + contador);
+                    }
+                }
                 if (serpiente.get(0).getX() > 560) {
 
                 }
@@ -151,7 +159,7 @@ public class Juego {
         });
 
         ventana.addKeyListener(new KeyListener() {
-            
+
             @Override
             public void keyTyped(KeyEvent e) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -215,9 +223,9 @@ public class Juego {
                 }
                 if (e.getKeyCode() == KeyEvent.VK_P) {
                     tiempo.stop();
-                    
+
                     JOptionPane.showMessageDialog(null, "PAUSA");
-                    
+
                     if (bandera == 1) {
                         tiempo.start();
 

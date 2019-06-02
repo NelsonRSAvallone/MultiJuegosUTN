@@ -29,6 +29,7 @@ public class Juego {
     JFrame ventana;
     JPanel panelJuego;
     JLabel fondo;
+    
     //serpiente
     ArrayList<JLabel> serpiente;
     int x;

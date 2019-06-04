@@ -44,7 +44,7 @@ public PanelPong() {
     }
     
     public void actualizar(){
-    pelota.mover(getBounds());
+    pelota.mover(getBounds(),colision(r1.getRaqueta()),colision(r2.getRaqueta()));//le mandamos como parametro la colision de las 2 raquetas
     r1.moverR1(getBounds());
     r2.moverR2(getBounds());
     }

@@ -83,4 +83,11 @@ public class Pelota {
     public int getScore2() {
         return score2;
     }
+   
+    public void setScore1(int score1){
+    this.score1=score1;
+    }
+    public void setScore2(int score2){
+    this.score2=score2;
+    }
 }

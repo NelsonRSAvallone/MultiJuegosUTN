@@ -70,13 +70,19 @@ public PanelPong() {
         if (pelota.getScore1() == 5) {
             g.drawString("GANÓ El JUGADOR 1", (float) getBounds().getCenterX() - 180, (float) getBounds().getCenterY() - 100);
             Pelota.finJuego = true;
-            //JOptionPane.showMessageDialog(null, "Restart");
+            //Thread.sleep(4000);
+            resetGame();
         }
         if (pelota.getScore2() == 5) {
             g.drawString("GANÓ EL JUGADOR 2", (float) getBounds().getCenterX() - 180, (float) getBounds().getCenterY() - 100);
             Pelota.finJuego = true;
-           // JOptionPane.showMessageDialog(null, "Restart");
+            //Thread.sleep(4000);
+           resetGame();
         }
     }
+     public void resetGame(){
+     pelota.setScore1(0);
+     pelota.setScore2(0);
+     }
     
 }

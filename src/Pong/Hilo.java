@@ -21,13 +21,14 @@ public class Hilo extends Thread {
     
     @Override
     public void run() {
-        while (true) {
+        while (!Pelota.finJuego) {
+            lamina.repaint();
             try {
                 Thread.sleep(6);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Hilo.class.getName()).log(Level.SEVERE, null, ex);
             }
-            lamina.repaint();
+            
           
         }
     }

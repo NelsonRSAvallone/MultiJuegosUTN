@@ -15,8 +15,8 @@ import java.awt.geom.Rectangle2D;
 public class Pelota {
     private static final int TAMX = 15;
     private static final int TAMY = 15;
-   private int x;
-   private int y;
+   private double x;
+   private static double y ;
    private  int dx=1;
    private  int dy=1;
    //private final int ANCHO=15, ALTO=15;
@@ -27,7 +27,7 @@ public class Pelota {
        this.x=x;
        this.y=y;
     }
-   public Rectangle2D getShape() {
+   public Rectangle2D getPelota() {
         return new Rectangle2D.Double(x, y, TAMX, TAMY);
     }
    
@@ -63,17 +63,27 @@ public class Pelota {
            
         }
         
-    if(x>limites.getMaxX()){
-    dx=-dx;
-    }//fin if dx
-    if (y>limites.getMaxY()){
-    dy=-dy;
-    }//fin if dy
-    if (x<0){
-   dx=-dx;
+     if (y < limites.getMinY()) {
+
+            y = limites.getMinY();
+
+            dy = -dy;
+            
+        }
+
+        if (y + TAMY >= limites.getMaxY()) {
+
+            y = limites.getMaxY() - TAMY;
+
+            dy = -dy;
+            
+        }
    }
-    if (y<0){
-   dy=-dy;
-   }//fin IF y
-   }
+   public int getScore1() {
+        return score1;
+    }
+
+    public int getScore2() {
+        return score2;
+    }
 }

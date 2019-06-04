@@ -29,7 +29,7 @@ public class Juego {
     JFrame ventana;
     JPanel panelJuego;
     JLabel fondo;
-    
+
     //serpiente
     ArrayList<JLabel> serpiente;
     int x;
@@ -118,8 +118,12 @@ public class Juego {
                         JOptionPane.showMessageDialog(null, "game over" + "\n Score: " + contador);
                     }
                 }
-                if (serpiente.get(0).getX() > 560) {
-
+                if (serpiente.get(0).getX() > 560) {//logro que al llegar a un muro aparezca por el opuesto
+                    for (int i = serpiente.size() - 1; i > 0; i--) {
+                        serpiente.get(i).setLocation(serpiente.get(i - 1).getLocation());
+                        serpiente.get(i).repaint();
+                    }
+                    serpiente.get(0).setLocation(0, serpiente.get(0).getY() + y);
                 }
                 if (serpiente.get(0).getX() < 30) {
                     // perdio=1;

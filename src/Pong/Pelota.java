@@ -34,10 +34,12 @@ public class Pelota {
     //Validamos colision de pelota con raqueta
     if(colisionR1){//si es true
     dx=-dx;
+    x=55;
     }
     
     if(colisionR2){
     dx=-dx;
+    x=755;
     }
         
     if(x>limites.getMaxX()){

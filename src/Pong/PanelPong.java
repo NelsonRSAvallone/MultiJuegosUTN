@@ -11,6 +11,7 @@ import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -69,10 +70,12 @@ public PanelPong() {
         if (pelota.getScore1() == 5) {
             g.drawString("GANÓ El JUGADOR 1", (float) getBounds().getCenterX() - 180, (float) getBounds().getCenterY() - 100);
             Pelota.finJuego = true;
+            //JOptionPane.showMessageDialog(null, "Restart");
         }
         if (pelota.getScore2() == 5) {
             g.drawString("GANÓ EL JUGADOR 2", (float) getBounds().getCenterX() - 180, (float) getBounds().getCenterY() - 100);
             Pelota.finJuego = true;
+           // JOptionPane.showMessageDialog(null, "Restart");
         }
     }
     

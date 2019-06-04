@@ -71,13 +71,13 @@ public PanelPong() {
             g.drawString("GANÓ El JUGADOR 1", (float) getBounds().getCenterX() - 180, (float) getBounds().getCenterY() - 100);
             Pelota.finJuego = true;
             //Thread.sleep(4000);
-            resetGame();
+            //resetGame();
         }
         if (pelota.getScore2() == 5) {
             g.drawString("GANÓ EL JUGADOR 2", (float) getBounds().getCenterX() - 180, (float) getBounds().getCenterY() - 100);
             Pelota.finJuego = true;
             //Thread.sleep(4000);
-           resetGame();
+           //resetGame();
         }
     }
      public void resetGame(){

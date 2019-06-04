@@ -83,7 +83,7 @@ public class Juego {
         panelJuego.add(serpiente.get(0), 0);
 
         ventana.add(panelJuego);
-
+        //Label comida
         comida = new JLabel();
         comida.setSize(20, 20);
         comida.setIcon(new ImageIcon("sprite/comida.png"));

@@ -23,10 +23,7 @@ public class Pelota {
    private Integer score1 = 0, score2 = 0;
    public static boolean finJuego = false;
    
-   public Pelota (int x, int y){
-       this.x=x;
-       this.y=y;
-    }
+   
    public Rectangle2D getPelota() {
         return new Rectangle2D.Double(x, y, TAMX, TAMY);
     }

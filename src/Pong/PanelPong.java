@@ -34,7 +34,7 @@ public PanelPong() {
     Graphics2D g2 = (Graphics2D) g;
     g2.setColor(Color.WHITE);//Elegimos el color de la pelota
     dibujar(g2);
-    
+    dibujarPuntaje(g2);
     actualizar ();
     }
     

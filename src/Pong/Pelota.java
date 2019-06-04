@@ -28,9 +28,18 @@ public class Pelota {
    }
    
    //metodo para mover la pelota y que rebote
-   public void mover(Rectangle limites){
+   public void mover(Rectangle limites, boolean colisionR1, boolean colisionR2 ){
     x += dx;
     y += dy;
+    //Validamos colision de pelota con raqueta
+    if(colisionR1){//si es true
+    dx=-dx;
+    }
+    
+    if(colisionR2){
+        
+    dx=-dx;
+    }
     if(x>limites.getMaxX()){
     dx=-dx;
     }//fin if dx

@@ -13,19 +13,23 @@ import java.awt.geom.Rectangle2D;
  * @author NelsonSosa
  */
 public class Pelota {
+    private static final int TAMX = 15;
+    private static final int TAMY = 15;
    private int x;
    private int y;
    private  int dx=1;
    private  int dy=1;
-   private final int ANCHO=15, ALTO=15;
+   //private final int ANCHO=15, ALTO=15;
+   private Integer score1 = 0, score2 = 0;
+   public static boolean finJuego = false;
    
    public Pelota (int x, int y){
        this.x=x;
        this.y=y;
     }
-   public Rectangle2D getPelota(){
-   return new Rectangle2D.Double(x,y,ANCHO,ALTO);
-   }
+   public Rectangle2D getShape() {
+        return new Rectangle2D.Double(x, y, TAMX, TAMY);
+    }
    
    //metodo para mover la pelota y que rebote
    public void mover(Rectangle limites, boolean colisionR1, boolean colisionR2 ){
@@ -34,13 +38,30 @@ public class Pelota {
     //Validamos colision de pelota con raqueta
     if(colisionR1){//si es true
     dx=-dx;
-    x=55;
+    x=20;
     }
     
     if(colisionR2){
     dx=-dx;
     x=755;
     }
+    
+    if (x < limites.getMinX()) {
+            score2++; //el puntaje del jugador2 aumenta en uno
+           
+            x = limites.getCenterX();
+            y = limites.getCenterY();
+            dx = -dx;
+           
+        }
+    if (x + TAMX >= limites.getMaxX()) {
+            score1++; //el puntaje del jugador1 aumenta en uno
+            
+            x = limites.getCenterX();
+            y = limites.getCenterY();
+            dx = -dx;
+           
+        }
         
     if(x>limites.getMaxX()){
     dx=-dx;

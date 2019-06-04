@@ -6,6 +6,7 @@ package Pong;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
@@ -47,15 +48,20 @@ public PanelPong() {
     r1.moverR1(getBounds());
     r2.moverR2(getBounds());
     }
-    public void iterarJuego() {
-        while (true) {
-            try {
-                repaint();
-                Thread.sleep(6);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(PanelPong.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+//    public void iterarJuego() {
+//        while (true) {
+//            try {
+//                repaint();
+//                Thread.sleep(6);
+//            } catch (InterruptedException ex) {
+//                Logger.getLogger(PanelPong.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
+//    }
+    //Colision de la pelota con la raqueta
+    private boolean colision (Rectangle2D r){
+    return pelota.getPelota().intersects(r);// cuando usamos este metodo intersects, detectamos si la pelota se va a cruzar con la raqueta, en el API de java dice que si dos objetos tipo rectangulo se intersectan nos devuelve un true o un false
     }
+    
     
 }

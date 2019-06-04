@@ -118,15 +118,19 @@ public class Juego {
                         JOptionPane.showMessageDialog(null, "game over" + "\n Score: " + contador);
                     }
                 }
-                if (serpiente.get(0).getX() > 560) {//logro que al llegar a un muro aparezca por el opuesto
+                if (serpiente.get(0).getX() > 600) {//logro que al llegar a un muro aparezca por el opuesto
                     for (int i = serpiente.size() - 1; i > 0; i--) {
                         serpiente.get(i).setLocation(serpiente.get(i - 1).getLocation());
                         serpiente.get(i).repaint();
                     }
                     serpiente.get(0).setLocation(0, serpiente.get(0).getY() + y);
                 }
-                if (serpiente.get(0).getX() < 30) {
-                    // perdio=1;
+                if (serpiente.get(0).getX() < 0) {
+                    for (int i = serpiente.size() - 1; i > 0; i--) {
+                        serpiente.get(i).setLocation(serpiente.get(i - 1).getLocation());
+                        serpiente.get(i).repaint();
+                    }
+                    serpiente.get(0).setLocation(590, serpiente.get(0).getY() + y);
                 }
                 if (serpiente.get(0).getY() > 510) {
                     // perdio=1;

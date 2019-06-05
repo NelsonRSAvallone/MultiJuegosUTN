@@ -22,7 +22,7 @@ import javax.swing.Timer;
 
 /**
  *
- * @author leand
+ * @author leandrosorolla
  */
 public class Juego {
 

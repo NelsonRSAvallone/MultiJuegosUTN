@@ -15,20 +15,16 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        GameLoop control = new GameLoop();
         
+        SetGame.mensajeBienvenida();
+        SetGame.mensajeExplicaJuego();
+        SetGame.mensajeCantidadJugadores();
+        SetGame.pedirNombreJugadores();
         Graficos grafico = new Graficos();
-        grafico.moverCerebro();
-    
-        Ventana v = new Ventana();
-        //Player player1 = new Player();
         
         
-       // SetGame.mensajeBienvenida();
-       // SetGame.mensajeExplicaJuego();
-       // SetGame.mensajeCantidadJugadores();
-       // SetGame.pedirNombreJugadores();
-       // control.loop();
+        GameLoop control = new GameLoop();
+        control.loop();
         
     }
     

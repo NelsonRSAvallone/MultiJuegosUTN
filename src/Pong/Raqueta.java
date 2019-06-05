@@ -6,7 +6,7 @@ import java.awt.geom.Rectangle2D;
 
 /**
  *
- * @author Computer
+ * @author NelsonSosa
  */
 public class Raqueta {
     private int x,y;

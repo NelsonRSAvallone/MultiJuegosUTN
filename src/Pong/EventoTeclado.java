@@ -6,7 +6,7 @@ import java.awt.event.KeyEvent;
 
 /**
  *
- * @author Nelson
+ * @author NelsonSosa
  */
 public class EventoTeclado extends KeyAdapter {
 static boolean w, s, up, down;

@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 /**
- *
+ 
  * @author leandrosorolla
  */
 public class Juego {

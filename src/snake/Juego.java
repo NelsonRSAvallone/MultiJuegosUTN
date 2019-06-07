@@ -117,7 +117,8 @@ public class Juego {
                         JOptionPane.showMessageDialog(null, "game over" + "\n Score: " + contador);
                     }
                 }
-                if (serpiente.get(0).getX() > 600) {//logro que al llegar a un muro aparezca por el opuesto
+                 //colisones con muros y repintado en lado opuesto
+                if (serpiente.get(0).getX() > 600) {
                     for (int i = serpiente.size() - 1; i > 0; i--) {
                         serpiente.get(i).setLocation(serpiente.get(i - 1).getLocation());
                         serpiente.get(i).repaint();
@@ -131,12 +132,21 @@ public class Juego {
                     }
                     serpiente.get(0).setLocation(590, serpiente.get(0).getY() + y);
                 }
-                if (serpiente.get(0).getY() > 510) {
-                    // perdio=1;
+               if (serpiente.get(0).getY() > 560) {
+                    for (int i = serpiente.size() - 1; i > 0; i--) {
+                        serpiente.get(i).setLocation(serpiente.get(i - 1).getLocation());
+                        serpiente.get(i).repaint();
+                    }
+                    serpiente.get(0).setLocation(serpiente.get(0).getX() + x, 1);
                 }
-                if (serpiente.get(0).getY() < 30) {
-                    //perdio=1;
+                if (serpiente.get(0).getY() < 0) {
+                    for (int i = serpiente.size() - 1; i > 0; i--) {
+                        serpiente.get(i).setLocation(serpiente.get(i - 1).getLocation());
+                        serpiente.get(i).repaint();
+                    }
+                    serpiente.get(0).setLocation(serpiente.get(0).getX() + x, 550);
                 }
+                //fin colisiones
                 if (perdio == 1) {
 
                     tiempo.stop();

@@ -30,11 +30,11 @@ public class Juego {
     JLabel fondo;
 
     //serpiente
-    ArrayList<JLabel> serpiente;
+    ArrayList<JLabel> serpiente;//ArrayList para la serpiente
     int x;
     int y;
     int desplazamiento = 20;
-
+    //timer es el hilo que controla el juego
     Timer tiempo;
     int bandera = 0;
     Rectangle serp;
@@ -56,35 +56,35 @@ public class Juego {
 
     public Juego() {//constructor
         //ventana
-        ventana = new JFrame("Snake");
-        ventana.setSize(600, 600);
-        ventana.setLocationRelativeTo(null);
-        ventana.setLayout(null);
-        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ventana = new JFrame("Snake");//le doy memoria a la ventana
+        ventana.setSize(600, 600);//tamaño de la ventana
+        ventana.setLocationRelativeTo(null);//se coloca la ventana en el centro
+        ventana.setLayout(null);//permite colocar los botones donde queramos
+        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//comando para cerrar la ventana con la cruz
         ventana.setResizable(false);//no permite modificar la ventana
         //panel
-        panelJuego = new JPanel();
-        panelJuego.setSize(ventana.getSize());
+        panelJuego = new JPanel();//asignamos memoria al panel
+        panelJuego.setSize(ventana.getSize());//asignamos tamaño del panel
         panelJuego.setLayout(null);
         panelJuego.setVisible(true);
         //fondo
-        fondo = new JLabel();
-        fondo.setSize(panelJuego.getSize());
-        fondo.setIcon(new ImageIcon("sprite/fondo.jpg"));
+        fondo = new JLabel();//asignamos memoria
+        fondo.setSize(panelJuego.getSize());//asignamos el tamaño
+        fondo.setIcon(new ImageIcon("sprite/fondo.jpg"));//asignamos la imagen
         fondo.setVisible(true);
         panelJuego.add(fondo, 0);
 
         //serpiente
-        serpiente = new ArrayList<JLabel>();
-        JLabel aux = new JLabel();
-        aux.setLocation(290, 290);
-        aux.setSize(20, 20);
+        serpiente = new ArrayList<JLabel>();//asignamos memoria al array
+        JLabel aux = new JLabel();//auxiliar para agregar la cabeza de la serpiente
+        aux.setLocation(290, 290);//ubicamos la cabeza en el centro
+        aux.setSize(20, 20);//tamaño dellabel igual al tamaño de la imagen
         aux.setIcon(new ImageIcon("sprite/1.png"));
         aux.setVisible(true);
-        serpiente.add(aux);
-        panelJuego.add(serpiente.get(0), 0);
+        serpiente.add(aux);//añadimos aux al array
+        panelJuego.add(serpiente.get(0), 0);//añadimos el array en  la posicion especificada al panel
 
-        ventana.add(panelJuego);
+        ventana.add(panelJuego);//añadimos el panel a la ventana
         //Label comida
         comida = new JLabel();
         comida.setSize(20, 20);
@@ -98,7 +98,7 @@ public class Juego {
         comi = new Rectangle(comida.getBounds());
 
         ventana.setVisible(true);
-
+        //label de la puntuacion
         puntuacion = new JLabel("Score" + contador);
         puntuacion.setBounds(10, 20, 100, 20);
         puntuacion.setVisible(true);
@@ -148,22 +148,24 @@ public class Juego {
                     serpiente.get(0).setLocation(serpiente.get(0).getX() + x, 550);
                 }
                 //fin colisiones
-                if (perdio == 1) {
+                if (perdio == 1) {//condicional en caso de game over
 
                     tiempo.stop();
                 }
+                //interseccion fruta con serpiente
                 if (comi.intersects(serp)) {
                     cx = aleatorio.nextInt(580);
                     cy = aleatorio.nextInt(580);
                     comida.setLocation(cx, cy);
                     comida.repaint();
+                    //auxiliar cuerpo de la serpiente
                     JLabel aux = new JLabel();
                     aux.setLocation(200, 200);
                     aux.setSize(20, 20);
                     aux.setIcon(new ImageIcon("sprite/cuerpo.png"));
                     aux.setVisible(true);
 
-                    serpiente.add(aux);
+                    serpiente.add(aux);//se añade al array el cuerpo
                     panelJuego.add(serpiente.get(serpiente.size() - 1), 0);
                     //puntaje   
                     contador += 100;
@@ -184,7 +186,7 @@ public class Juego {
             }
         });
 
-        ventana.addKeyListener(new KeyListener() {
+        ventana.addKeyListener(new KeyListener() {//añadimos eventos de teclado
 
             @Override
             public void keyTyped(KeyEvent e) {

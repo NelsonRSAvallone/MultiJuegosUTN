@@ -42,10 +42,14 @@ public class Juego {
     int perdio = 0;
     //comida
     JLabel comida;
-    int cx = 0;//posicion de comida en x
-    int cy = 0;//posicion de comida en y
-    Rectangle comi;
+    Random aleatorio = new Random();//RANDOM PARA LA APARICION DE LA COMIDA
 
+    int cx = aleatorio.nextInt(500);//posicion de comida en x
+    int cy = aleatorio.nextInt(530);//posicion de comida en y
+
+    Rectangle comi;
+    //dificultad
+    int dif = 200;
     //Puntuacion
     JLabel puntuacion;
     int contador = 0;
@@ -63,7 +67,6 @@ public class Juego {
         panelJuego.setSize(ventana.getSize());
         panelJuego.setLayout(null);
         panelJuego.setVisible(true);
-        //panelJuego.setBackground(Color.white);
         //fondo
         fondo = new JLabel();
         fondo.setSize(panelJuego.getSize());
@@ -86,9 +89,7 @@ public class Juego {
         comida = new JLabel();
         comida.setSize(20, 20);
         comida.setIcon(new ImageIcon("sprite/comida.png"));
-        Random aleatorio = new Random();
-        cx = aleatorio.nextInt(580);
-        cy = aleatorio.nextInt(580);
+
         comida.setLocation(cx, cy);
         comida.setVisible(true);
         panelJuego.add(comida, 0);
@@ -104,7 +105,7 @@ public class Juego {
         puntuacion.setForeground(Color.red);
         panelJuego.add(puntuacion, 0);
 
-        tiempo = new Timer(200, new ActionListener() {
+        tiempo = new Timer(dif, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {//establece los ciclos de repeticion
                 comi.setBounds(comida.getBounds());
@@ -117,7 +118,7 @@ public class Juego {
                         JOptionPane.showMessageDialog(null, "game over" + "\n Score: " + contador);
                     }
                 }
-                 //colisones con muros y repintado en lado opuesto
+                //colisones con muros y repintado en lado opuesto
                 if (serpiente.get(0).getX() > 600) {
                     for (int i = serpiente.size() - 1; i > 0; i--) {
                         serpiente.get(i).setLocation(serpiente.get(i - 1).getLocation());
@@ -132,7 +133,7 @@ public class Juego {
                     }
                     serpiente.get(0).setLocation(590, serpiente.get(0).getY() + y);
                 }
-               if (serpiente.get(0).getY() > 560) {
+                if (serpiente.get(0).getY() > 560) {
                     for (int i = serpiente.size() - 1; i > 0; i--) {
                         serpiente.get(i).setLocation(serpiente.get(i - 1).getLocation());
                         serpiente.get(i).repaint();
@@ -164,9 +165,16 @@ public class Juego {
 
                     serpiente.add(aux);
                     panelJuego.add(serpiente.get(serpiente.size() - 1), 0);
-
+                    //puntaje   
+                    contador += 100;
+                    puntuacion.setText("Score" + contador);
+                    puntuacion.repaint();
+                    //dificultad
+                    if (contador % 500 == 0) {
+                        tiempo.setDelay(dif -= 20);
+                    }
                 }
-
+                //repintado de cabeza y cuerpo
                 for (int i = serpiente.size() - 1; i > 0; i--) {
                     serpiente.get(i).setLocation(serpiente.get(i - 1).getLocation());
                     serpiente.get(i).repaint();

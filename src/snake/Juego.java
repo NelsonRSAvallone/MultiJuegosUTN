@@ -24,7 +24,10 @@ import javax.swing.Timer;
  * @author leandrosorolla
  */
 public class Juego {
-
+   //CONSTANTE DE ESTADO 
+    public static int DIRECCION = -1;
+    public static final int  ARRIBA = 0, ABAJO = 1, IZQUIERDA = 2, DERECHA = 3;
+    //ventana
     JFrame ventana;
     JPanel panelJuego;
     JLabel fondo;
@@ -197,7 +200,7 @@ public class Juego {
             @Override
             public void keyPressed(KeyEvent e) {
 
-                if (e.getKeyCode() == KeyEvent.VK_UP) {
+                if (e.getKeyCode() == KeyEvent.VK_UP && DIRECCION != ABAJO) {
                     System.out.println("arriba");
                     if (serpiente.get(0).getY() > 0) {
                         y = -desplazamiento;
@@ -208,8 +211,9 @@ public class Juego {
                         tiempo.start();
                         bandera = 1;
                     }
+                    DIRECCION = ARRIBA;
                 }
-                if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+                if(e.getKeyCode() == KeyEvent.VK_DOWN&& DIRECCION != ARRIBA) {
                     System.out.println("abajo");
                     if (serpiente.get(0).getY() < 600) {
                         y = desplazamiento;
@@ -221,8 +225,9 @@ public class Juego {
                         tiempo.start();
                         bandera = 1;
                     }
+                    DIRECCION = ABAJO;
                 }
-                if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+                if (e.getKeyCode() == KeyEvent.VK_LEFT&& DIRECCION != DERECHA)  {
                     System.out.println("izquierda");
                     if (serpiente.get(0).getX() > 0) {
                         y = 0;
@@ -234,9 +239,9 @@ public class Juego {
                         tiempo.start();
                         bandera = 1;
                     }
-
+                     DIRECCION = IZQUIERDA;
                 }
-                if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+                if (e.getKeyCode() == KeyEvent.VK_RIGHT&& DIRECCION != IZQUIERDA)  {
                     System.out.println("derecha");
                     if (serpiente.get(0).getX() < 600) {
                         y = 0;
@@ -248,6 +253,7 @@ public class Juego {
                         tiempo.start();
                         bandera = 1;
                     }
+                     DIRECCION = DERECHA;
                 }
                 if (e.getKeyCode() == KeyEvent.VK_P) {
                     tiempo.stop();

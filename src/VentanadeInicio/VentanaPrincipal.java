@@ -30,7 +30,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         MemoryButton = new javax.swing.JButton();
-        PongButton = new javax.swing.JButton();
+        pongButton = new javax.swing.JButton();
         SnakeButton = new javax.swing.JButton();
         MentesButton = new javax.swing.JButton();
 
@@ -42,8 +42,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         MemoryButton.setText("GameMemory");
         MemoryButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        PongButton.setText("Pong");
-        PongButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pongButton.setText("Pong");
+        pongButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         SnakeButton.setText("Snake");
         SnakeButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -60,7 +60,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(MemoryButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1)
-                    .addComponent(PongButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pongButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(SnakeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(MentesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE))
                 .addContainerGap(163, Short.MAX_VALUE))
@@ -73,7 +73,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(59, 59, 59)
                 .addComponent(MemoryButton)
                 .addGap(32, 32, 32)
-                .addComponent(PongButton)
+                .addComponent(pongButton)
                 .addGap(36, 36, 36)
                 .addComponent(SnakeButton)
                 .addGap(37, 37, 37)
@@ -89,7 +89,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -131,11 +131,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton MemoryButton;
-    private javax.swing.JButton MentesButton;
-    private javax.swing.JButton PongButton;
-    private javax.swing.JButton SnakeButton;
+    public javax.swing.JButton MemoryButton;
+    public javax.swing.JButton MentesButton;
+    public javax.swing.JButton SnakeButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JButton pongButton;
     // End of variables declaration//GEN-END:variables
 }

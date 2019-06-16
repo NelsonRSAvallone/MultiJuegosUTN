@@ -9,6 +9,6 @@ package VentanadeInicio;
  *
  * @author Nelson
  */
-public class Control {
+public class Modelo {
     
 }

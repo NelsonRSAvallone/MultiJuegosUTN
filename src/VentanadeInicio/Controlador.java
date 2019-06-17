@@ -3,9 +3,9 @@ package VentanadeInicio;
 
 import Pong.VentanaPong;
 import java.awt.event.ActionListener;
-import javafx.event.ActionEvent;
 import javax.swing.JFrame;
-
+import snake.Juego;
+import java.awt.event.ActionEvent;
 /**
  *
  * @author Nelson
@@ -14,7 +14,7 @@ public class Controlador implements ActionListener {
     public VentanaPrincipal view;
     public Modelo model;
     public  VentanaPong pong;//AGREGANDO el Objeto del Pong
-    
+    public Juego snake;
     public Controlador(){}
     //Constructor, necesito los objetos ventna principal y model para darle funcionalidad
     public Controlador (VentanaPrincipal view, Modelo model){
@@ -22,16 +22,21 @@ public class Controlador implements ActionListener {
     this.model=model;
     
     this.view.pongButton.addActionListener(this);//Agregando key listener
-  //  this.view.MemoryButton.addActionListener(this);//Agregando key listener
-   // this.view.MentesButton.addActionListener(this);//Agregando key listener
-    //this.view.SnakeButton.addActionListener(this);//Agregando key listener
+    this.view.MemoryButton.addActionListener(this);//Agregando key listener
+    this.view.MentesButton.addActionListener(this);//Agregando key listener
+    this.view.SnakeButton.addActionListener(this);//Agregando key listener
     
     }
     
     @Override
-    public void actionPerformed(java.awt.event.ActionEvent e) {
-       pong= new VentanaPong();
+    public void actionPerformed(ActionEvent e) {
+       if(e.getSource()==view.pongButton){
+        pong= new VentanaPong();
+       }
+        if(e.getSource()==view.SnakeButton){
+          snake= new Juego(); 
         
+        }
         
     }
     

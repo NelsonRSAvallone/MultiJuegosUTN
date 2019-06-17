@@ -21,10 +21,10 @@ public class Controlador implements ActionListener {
     this.view=view;
     this.model=model;
     
-    this.view.pongButton.addActionListener(this);//Agregando key listener
-  //  this.view.MemoryButton.addActionListener(this);//Agregando key listener
-   // this.view.MentesButton.addActionListener(this);//Agregando key listener
-    //this.view.SnakeButton.addActionListener(this);//Agregando key listener
+    this.view.pongButton.addActionListener(this);//Agregando 
+  //  this.view.MemoryButton.addActionListener(this);//Agregando 
+   // this.view.MentesButton.addActionListener(this);//Agregando 
+    //this.view.SnakeButton.addActionListener(this);//Agregando 
     
     }
     

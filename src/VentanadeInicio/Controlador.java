@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 public class Controlador implements ActionListener {
     public VentanaPrincipal view;
     public Modelo model;
-    public  VentanaPong pong;
+    public  VentanaPong pong;//AGREGANDO el Objeto del Pong
     
     public Controlador(){}
     //Constructor, necesito los objetos ventna principal y model para darle funcionalidad

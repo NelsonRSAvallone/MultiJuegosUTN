@@ -12,8 +12,8 @@ public class MainMenu {
 
         VentanaPrincipal v1 = new VentanaPrincipal();
 
-        Modelo m1 = new Modelo();
-        Controlador c1 = new Controlador(v1, m1);
+        
+        Controlador c1 = new Controlador(v1);
 
         c1.iniciar();
         v1.setVisible(true);

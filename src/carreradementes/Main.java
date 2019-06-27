@@ -7,6 +7,7 @@ package carreradementes;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,7 +19,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
        // SetGame.mensajeBienvenida();
        // SetGame.mensajeExplicaJuego();
         SetGame.mensajeCantidadJugadores();

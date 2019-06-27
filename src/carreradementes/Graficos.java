@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -21,6 +22,7 @@ import javax.swing.JPanel;
 public class Graficos {
     
     GameLoop rol;
+    SetGame rolSetGame = new SetGame();
     JFrame ventana;
     JPanel panel;
     JLabel fondo;
@@ -88,13 +90,21 @@ public class Graficos {
             public void moverCerebro(int turno) throws InterruptedException{ //
                 
                 if(turno == 0){
-                
+                    if(posicionY1 <= 40){JOptionPane.showMessageDialog(null,"Felicidades " + SetGame.nombres[0] + "! Has Ganado!") ;
+                        GameLoop.funcionamiento=0;
+                    }
+                    
                     for(int i=0; i<50;i++){
                         cerebro1.setLocation(50, posicionY1);
                         posicionY1--;
                         Thread.sleep(30);
                     }
                 } else if(turno == 1){
+                    if(posicionY2 <= 40){JOptionPane.showMessageDialog(null,"Felicidades " + SetGame.nombres[1] + "! Has Ganado!") ;
+                        GameLoop.funcionamiento=0;
+
+                    }
+
                     for(int i=0; i<50;i++){
                         cerebro2.setLocation(197, posicionY2);
                         posicionY2--;
@@ -102,6 +112,11 @@ public class Graficos {
                     }
                 
                 }else if(turno ==2){
+                    if(posicionY3 <= 40){JOptionPane.showMessageDialog(null,"Felicidades " + SetGame.nombres[2] + "! Has Ganado!") ;
+                        GameLoop.funcionamiento=0;
+                    
+                    }
+
                     for(int i=0; i<50;i++){
                         cerebro3.setLocation(344, posicionY3);
                         posicionY3--;

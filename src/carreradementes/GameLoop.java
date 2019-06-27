@@ -22,8 +22,7 @@ public class GameLoop {
     public static int respuesta;
     public int turno;
     private static boolean correccion = false;
-    public static int contador=0; // este contador maneja la cantidad de segundos que se ejecuta 
-    public static int tiempoEnSegundos; //esta variable se usa para convertir de mili a segundos el tiempo que entra por parametro al metodo moverCerebro()
+    public static int funcionamiento=1; // esta variable mantiene funcionando el lazo del todo el juego
         
     public GameLoop(){}
            
@@ -60,7 +59,7 @@ public class GameLoop {
     }
     
     public void loop(){
-        while(true){
+        while(funcionamiento ==1){
             operacion();
             mensajeSuma(turno);
             comparacion();

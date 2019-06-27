@@ -5,6 +5,9 @@
  */
 package carreradementes;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Luciano Beemeequis
@@ -16,11 +19,11 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        SetGame.mensajeBienvenida();
-        SetGame.mensajeExplicaJuego();
+       // SetGame.mensajeBienvenida();
+       // SetGame.mensajeExplicaJuego();
         SetGame.mensajeCantidadJugadores();
         SetGame.pedirNombreJugadores();
-        Graficos grafico = new Graficos();
+        GameLoop.rolGraficos = new Graficos();
         
         
         GameLoop control = new GameLoop();

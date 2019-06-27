@@ -18,20 +18,20 @@ public class SetGame {
    public static int cantJugadores;
    
    
-   public static void mensajeBienvenida(){
+       public static void mensajeBienvenida(){
        JOptionPane.showMessageDialog(null,"Divièrtete con carrera de mentes!");
    }
-
-   public static void mensajeExplicaJuego(){
-       JOptionPane.showMessageDialog(null,"El juego consiste en responder las preguntas correctmente\n"
-               + "lo mas ràpido posible. Cuando respondas, si tu pregunta es correcta\n"
-               + "el reloj se detendrà, y se sumarà ese valor en metros para llegar a la meta\n"
-               + "Si no respondes o si respondes mal, no se sumarà ningun punto de avance\n"
+    
+    public static void mensajeExplicaJuego(){
+       JOptionPane.showMessageDialog(null,"El juego consiste en responder las preguntas correctamente\n"
+               + ". Cuando respondas, si tu pregunta es correcta\n"
+               + "se sumarán puntos para llegar a la meta\n"
+               + "Si no respondes o si respondes mal, no se sumará ningun punto de avance\n"
                + "----------LET'S RACE!----------");
    }
    
    public static void mensajeCantidadJugadores(){   // PIDE CANTIDAD DE JUGADORES Y LO ALOJA EN cantJugadores
-      cantJugadores = Integer.parseInt(JOptionPane.showInputDialog("Elige la cantidad de jugadores con un numero entero, entre 2 y 5"));
+      cantJugadores = Integer.parseInt(JOptionPane.showInputDialog("Elige la cantidad de jugadores con un numero entero, entre 1 y 3"));
       nombres = new String[cantJugadores];
       puntajes = new int[cantJugadores];
    }

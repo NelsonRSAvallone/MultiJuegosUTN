@@ -6,6 +6,8 @@
 package carreradementes;
 
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,47 +16,44 @@ import javax.swing.JOptionPane;
  */
 public class GameLoop {
     public static Graficos rolGraficos;
-    public static Reloj rolReloj;
-    public static Jugador rolJugador = new Jugador();
     public static int  a;
     public static int  b;
     public static int  resultado;
     public static int respuesta;
     public int turno;
-    private static boolean correccion;
+    private static boolean correccion = false;
     public static int contador=0; // este contador maneja la cantidad de segundos que se ejecuta 
     public static int tiempoEnSegundos; //esta variable se usa para convertir de mili a segundos el tiempo que entra por parametro al metodo moverCerebro()
         
     public GameLoop(){}
            
-    public static int operacion(){          //GENERA OPERACION MATEMATICA
-        a =  (int)  (Math.random()*100);
-        b =  (int)  (Math.random()*100);
+    public static void operacion(){          //GENERA OPERACION MATEMATICA
+        a =  (int)  (Math.random()*10);
+        b =  (int)  (Math.random()*10);
         resultado = a + b;
-        return resultado;
     }
      
     public static void mensajeSuma(int turno){     // MENSAJE SUMA
-        rolReloj = new Reloj();
-        rolReloj.iniciarReloj();
-        respuesta =Integer.parseInt(JOptionPane.showInputDialog(SetGame.nombres[turno] + ": Resuelve el siguiente càlculo:\n"
+        
+        respuesta =Integer.parseInt(JOptionPane.showInputDialog(SetGame.nombres[turno] + " ,resuelve el siguiente càlculo:\n"
         + a + " + " + b + ":"));
-        if(comparacion(resultado,respuesta)==true){
-            SetGame.puntajes[turno] = rolReloj.contador;
-        }
-            rolReloj.detenerReloj(rolReloj.timer);
     }
     
-    public static boolean comparacion (int resultado, int respuesta){    // COMPARACION ENTRE OPERACION Y RESPUESTA
+    public void comparacion (){    // COMPARACION ENTRE OPERACION Y RESPUESTA
         if(respuesta == resultado){
            correccion = true; 
+            try {
+                rolGraficos.moverCerebro(turno);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(GameLoop.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else{correccion = false;}
-        return correccion;
+       
     }
     
     public void avanceTurno(){  // OBSERVA CORRECCION Y AVANZA TURNO O NO AVANZA
-        if(correccion==false){
-            if(turno==(SetGame.cantJugadores-1)){
+        if(correccion == false){
+            if(turno == (SetGame.cantJugadores-1)){
                 turno=0;
             }else{turno++;}
         }
@@ -62,10 +61,10 @@ public class GameLoop {
     
     public void loop(){
         while(true){
-            mensajeSuma(turno);
-            avanceTurno();
             operacion();
-            
+            mensajeSuma(turno);
+            comparacion();
+            avanceTurno();
         }
     }
 

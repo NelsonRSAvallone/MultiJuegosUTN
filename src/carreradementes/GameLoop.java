@@ -33,9 +33,12 @@ public class GameLoop {
     }
      
     public static void mensajeSuma(int turno){     // MENSAJE SUMA
-        
+        try{
         respuesta =Integer.parseInt(JOptionPane.showInputDialog(SetGame.nombres[turno] + " ,resuelve el siguiente càlculo:\n"
         + a + " + " + b + ":"));
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null,"No es una respuesta válida");
+        }
     }
     
     public void comparacion (){    // COMPARACION ENTRE OPERACION Y RESPUESTA

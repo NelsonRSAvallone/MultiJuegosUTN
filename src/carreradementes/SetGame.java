@@ -31,9 +31,11 @@ public class SetGame {
    }
    
    public static void mensajeCantidadJugadores(){   // PIDE CANTIDAD DE JUGADORES Y LO ALOJA EN cantJugadores
-      cantJugadores = Integer.parseInt(JOptionPane.showInputDialog("Elige la cantidad de jugadores con un numero entero, entre 1 y 3"));
-      nombres = new String[cantJugadores];
-      puntajes = new int[cantJugadores];
+     do{
+       cantJugadores = Integer.parseInt(JOptionPane.showInputDialog("Elige la cantidad de jugadores con un numero entero, entre 1 y 3"));
+       }while(cantJugadores < 0 || cantJugadores >3);      
+     nombres = new String[cantJugadores];
+     puntajes = new int[cantJugadores];
    }
    
    public static void pedirNombreJugadores(){ // va creando objetos jugador seteando su atributo nombre
